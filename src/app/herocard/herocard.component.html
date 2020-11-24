@@ -1,0 +1,50 @@
+<h2>My Heroacadamia</h2>
+<!-- search -->
+<!-- <app-searchcard (keyup)="onKey($event)"></app-searchcard> -->
+<!-- search -->
+
+<!-- radio -->
+<!-- <mat-radio-group aria-label="Select an option" [(ngModel)]="isNotValid">
+  <mat-radio-button color="primary"  *ngFor="let radiocheck of chagecardlist" [value]="radiocheck">{{radiocheck}}</mat-radio-button>
+</mat-radio-group>
+<app-herocardlist *ngIf="isNotValid == 'searchlist'" [listhero]="herotest"></app-herocardlist> -->
+<!-- radio -->
+<!-- fxLayoutAlign="space-around center" //ถ้าจะจัดให้อยู่ตรงกลาง -->
+<!-- card -->
+  <h2 class="h2">herocard</h2>
+  <div class="content">
+  <div fxLayout="row wrap"  fxLayoutGap="16px grid">
+    <mat-card fxFlex="30%" fxFlex.xs="100%" fxFlex.sm="30%" fxLayout="column" class="example-card" *ngFor="let
+      hero of herocards">
+      <mat-card-header>
+        <mat-card-title>{{hero.id}}</mat-card-title>
+        <mat-card-subtitle>{{hero.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{hero.image}}" alt="hero image">
+      <mat-card-content>
+        <p>
+          {{hero.name}}
+        </p>
+      </mat-card-content>
+      <mat-card-mat-card-actions>
+        <button mat-flat-button color="primary">Details</button>
+      </mat-card-mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<!-- card -->
+
+<!-- page -->
+<!-- <mat-paginator #paginator
+  [length]="length"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="[5, 10,15,20,30]"
+  (page)="getServerData($event)">
+</mat-paginator> -->
+<!-- page -->
+
+
+
+
+

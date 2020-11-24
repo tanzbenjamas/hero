@@ -1,0 +1,22 @@
+<mat-form-field appearance="fill">
+  <mat-label *ngIf="showTicks">Search</mat-label>
+  <mat-select [(ngModel)]="isNotValid">
+    <mat-option *ngFor="let state of chagecardlist" [value]="state">{{state}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<app-searchcard *ngIf="showTicks" (keyup)="onKey($event)"></app-searchcard>
+<div *ngIf="isNotValid == 'searchcard' && heroes">
+  <mat-card class="example-cards" *ngFor="let herom of heroes">
+    <mat-card-header>
+
+      <img mat-card-avatar class="example-header-image" src="{{herom.image}}"
+        alt="hero image">
+      <mat-card-title> ID {{herom.id}}</mat-card-title>
+      <mat-card-subtitle>MR. {{herom.name}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+</div>
+
+<app-herocardlist *ngIf="isNotValid == 'searchlist' && heroes"
+  [listhero]="heroes"> </app-herocardlist>

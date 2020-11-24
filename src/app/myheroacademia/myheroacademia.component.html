@@ -1,0 +1,67 @@
+<div fxFlex="100" fxHide.xs>
+  <section class="example-section">
+    <mat-checkbox style="margin-left: 2px;" class="example-margin"
+      color="primary"
+      [(ngModel)]="showTicks">Show ticks search</mat-checkbox>
+    <mat-checkbox class="example-margin" [(ngModel)]="autoTicks"
+      *ngIf="showTicks">
+      Auto ticks
+    </mat-checkbox>
+    <app-searchcard *ngIf="showTicks && ! autoTicks" (keyup)="onKey($event)"></app-searchcard>
+  </section>
+
+  <!-- search -->
+  <!-- <app-searchcard (keyup)="onKey($event)"></app-searchcard> -->
+  <!-- search -->
+
+  <!-- radio ไม่จำเป็น-->
+  <div class="margin-radio">
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="isNotValid">
+      <mat-radio-button color="primary" *ngFor="let radiocheck of chagecardlist"
+        [value]="radiocheck">{{radiocheck}}</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <!-- radio -->
+
+  <!-- list -->
+  <app-herocardlist *ngIf="isNotValid == 'searchlist' && heroes"
+    [listhero]="heroes"></app-herocardlist>
+  <!-- list -->
+
+  <!-- card -->
+  <app-herocard *ngIf="isNotValid == 'searchcard' && heroes"
+    [herocards]="heroes"></app-herocard>
+  <!-- card -->
+
+  <!-- youtube ไม่จำเป็น-->
+  <div *ngIf="isNotValid == ''" fxLayoutAlign="space-around center">
+    <iframe width="932px" height="504px"
+      src="https://www.youtube.com/embed/H9lS4-uIZMY" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+      gyroscope;
+      picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <!-- youtube -->
+
+  <!-- responsive mobile -->
+  <!-- <app-herocard-mobile [heromoblie] = "heroes"></app-herocard-mobile> -->
+  <!-- responsive mobile -->
+
+  <!-- page ไม่จำเป็น-->
+  <div class="footer">
+    <mat-paginator style="background-color: aliceblue;"
+      #paginator
+      [length]="length"
+      [pageIndex]="pageIndex"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[5, 10,15,20,30]"
+      (page)="getServerData($event)">
+    </mat-paginator>
+  </div>
+  <!-- page -->
+</div>
+
+
+<div fxFlex="100" fxHide.gt-xs>
+  <app-herocard-mobile></app-herocard-mobile>
+</div>

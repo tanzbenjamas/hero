@@ -1,0 +1,21 @@
+p {
+  font-family: Lato;
+}
+
+.example-card {
+  max-width: 300px;
+  margin: 4px
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.cardhero {
+  background-color: blue;
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}

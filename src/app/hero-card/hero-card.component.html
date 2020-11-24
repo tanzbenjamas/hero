@@ -1,0 +1,29 @@
+<h2>{{cardHERO}}</h2>
+<div>
+  <ul>
+  <li *ngFor="let cardId of cardheros" >
+    <a>
+      <span class="badge">{{cardId.id}}</span> {{cardId.name}}
+      {{cardId.image}}
+    </a>
+  </li>
+  </ul>
+</div>
+
+
+<ul class="heroes">
+  <li *ngFor="let hero of cardheros">
+     {{hero.id}} {{hero.name}}
+
+  </li>
+</ul>
+
+<h2>{{herocard.name}} Details</h2>
+<div><span>id: </span>{{herocard.id}}</div>
+<div><span>id: </span>{{herocard.image}}</div>
+<div><span>name: </span>{{herocard.name}}</div>
+
+
+
+
+

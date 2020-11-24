@@ -1,0 +1,11 @@
+<h2>My HerocardsList</h2>
+<ul class="heroes" >
+  <li *ngFor="let hero of listhero">
+    <a>
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+    <button class="delete" title="delete hero"
+      >x</button>
+  </li>
+</ul>
+

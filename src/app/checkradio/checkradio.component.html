@@ -1,0 +1,5 @@
+
+
+<mat-radio-group aria-label="Select an option" [(ngModel)]="checkValue">
+  <mat-radio-button color="primary"  *ngFor="let radiocheck of chagecardlist" [value]="radiocheck" (change)="test($event)" >{{radiocheck}}</mat-radio-button>
+</mat-radio-group>
